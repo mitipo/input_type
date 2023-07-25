@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>window.location 예제</title>
+  </head>
+  <body>
+    <p>현제 페이지의 url : <span id="currentUrl"></span></p>
+    <button onclick="gotoGoogle()">Google로 이동</button>
+    <button onclick="gotoGitHub()">GitHub로 이동</button>
+    <button onclick="reLoadPage()">페이지 새로고침</button>
+    <script>
+      // 현재 페이지의 url을 출력하는 함수
+      function showCurrentUrl() {
+        const currentUrlSpan = document.getElementById("currentUrl");
+        currentUrlSpan.textContent = window.location.href;
+      }
+      // 구글로 이동하는 함수
+      function gotoGoogle() {
+        window.location.assign("https://www.google.com");
+      }
+      // 깃허브로 이동하는 함수
+      function gotoGitHub() {
+        window.location.assign("https://www.github.com");
+      }
+      // 페이지 새로고침하는 함수
+      function reLoadPage() {
+        window.location.reload();
+      }
+      // 페이지 로드시 현재 url을 표시함.
+      showCurrentUrl();
+    </script>
+  </body>
+</html>

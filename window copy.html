@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>window.location 예제</title>
+  </head>
+  <body>
+    <button onclick="goBack()">이전페이지로 이동</button>
+    <button onclick="goForward()">다음페이지로 이동</button>
+    <button onclick="gotoGoogle()">구글로 이동</button>
+    <script>
+      //이전페이지로 이동하는 함수
+      function goBack() {
+        history.back();
+      }
+      //다음페이지로 이동하는 함수
+      function goForward() {
+        history.forward();
+      }
+      // 구글로 이동하는 함수
+      function gotoGoogle() {
+        window.location.assign("http://www.google.com");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가격</title>
+    <style>
+      #wrap {
+        background-color: bisque;
+        width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      fieldset {
+        margin-bottom: 20px;
+        border: 1px solid #222;
+      }
+      #total {
+        border: none;
+        font-size: 16px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <h1>피자 주문</h1>
+      <form>
+        <fieldset class="form-1">
+          <legend>사이즈</legend>
+          <p>Large - 24000 원</p>
+        </fieldset>
+        <fieldset class="form-2">
+          <legend>추가주문</legend>
+          <label for="pickle">
+            <input
+              type="checkbox"
+              id="pickle"
+              class="checkbx"
+              name="pickle"
+              value="800"
+            />피클(800원)</label
+          >
+          <label for="chilly">
+            <input
+              type="checkbox"
+              id="chilly"
+              class="checkbx"
+              name="chilly"
+              value="300"
+            />칠리 소스(300원)</label
+          >
+          <label for="deeping"
+            ><input
+              type="checkbox"
+              id="deeping"
+              class="checkbx"
+              name="deeping"
+              value="200"
+            />디핑 소스(200원)</label
+          >
+          <label for="stick"
+            ><input
+              type="checkbox"
+              id="stick"
+              class="checkbx"
+              name="stick"
+              value="4800"
+            />치즈스틱(4개, 4800원)</label
+          >
+          <label for="salad"
+            ><input
+              type="checkbox"
+              id="salad"
+              class="checkbx"
+              name="salad"
+              value="2400"
+            />콘 샐러드(2400원)</label
+          >
+        </fieldset>
+        <fieldset class="form-3">
+          <legend>합계</legend>
+          <input type="text" id="total" name="total" class="price" readonly />
+        </fieldset>
+      </form>
+    </div>
+    <script>
+      let price = 24000;
+      const sideMenu = document.querySelectorAll(".checkbx");
+      const total = document.querySelector("#total");
+      // price변수 자체적으로 콤마기능 추가
+      prcie - price.toLocaleString();
+      total.value = `${price.toLocaleString()} 원`;
+      for (i = 0; i < sideMenu.length; i++) {
+        sideMenu[i].onclick = function () {
+          if (this.checked == true) {
+            price += parseInt(this.value);
+          } else {
+            price -= parseInt(this.value);
+          }
+          total.value = `${price} 원`;
+        };
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가격</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      h1 {
+        text-align: center;
+      }
+      #calc {
+        width: 300px;
+        margin: 50px auto;
+        background-color: rgb(255, 237, 193);
+        padding: 20px;
+      }
+      .price {
+        width: 50%;
+        height: 30px;
+        border-radius: 5px;
+        border: 1px solid #222;
+      }
+      .circle {
+        border: 1px solid #222;
+        border-radius: 5px;
+        height: 30px;
+        width: 100%;
+      }
+      #start {
+        background-color: #eee;
+
+        border: 1px solid #222;
+        border-radius: 5px;
+        margin-left: 10px;
+        padding: 10px 20px;
+        vertical-align: middle;
+      }
+      hr {
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 40px;
+      }
+      input[type="text"] {
+        height: 50px;
+        border: 2px solid #222;
+        border-radius: 10px;
+        padding-left: 20px;
+      }
+      #calc > p {
+        line-height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <h1>원 둘레와 넓이 계산</h1>
+      <form>
+        <div id="calc">
+          <p>반지름 :</p>
+          <input type="text" id="radius" name="radius" class="price" />
+          <span id="start">계산</span>
+          <hr />
+          <p>원둘레 :</p>
+          <input type="text" id="round" name="round" class="circle" />
+          <br />
+          <p>원넓이 :</p>
+          <input type="text" id="area" name="area" class="circle" />
+        </div>
+      </form>
+    </div>
+    <script>
+      var radius = document.querySelector("#radius");
+      var start = document.querySelector("#start");
+      var area = document.querySelector("#area");
+      start.addEventListener("click", function () {
+        // 원의 둘레
+        document.querySelector("#round").value =
+          Number(radius.value) * Math.PI * 2;
+        // 원의 넓이
+        document.querySelector("#area").value =
+          Math.PI * Number(radius.value) * Number(radius.value);
+      });
+    </script>
+  </body>
+</html>
