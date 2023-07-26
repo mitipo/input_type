@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>새로고침 연습</title>
+    <style>
+      #container {
+        width: 500px;
+        margin: 20px auto;
+        padding: 10px;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px 40px;
+        border: 1px solid #ccc;
+        background-color: rgba(253, 234, 234, 0.6);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <p>현재 문서는 랜덤 배경색을 사용하고 있습니다.</p>
+      <p>"새로고침" 버튼을 클릭할때마다 배경색이 달라집니다.</p>
+      <button onclick="location.reload()">새로고침</button>
+    </div>
+    <script>
+      function changBg() {
+        var x = Math.floor(Math.random() * 256);
+        var y = Math.floor(Math.random() * 256);
+        var z = Math.floor(Math.random() * 256);
+        var bgColor = `rgb(${x},${y},${z})`;
+        document.body.style.background = bgColor;
+      }
+      changBg();
+    </script>
+  </body>
+</html>
